@@ -1,0 +1,12 @@
+services:
+  nginx-b:
+    image: nginx:latest
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html
+    environment:
+      VIRTUAL_HOST: 'nice.example.local,192.168.33.22'
+
+networks:
+  default:
+    external: true
+    name: sample-network

@@ -1,0 +1,12 @@
+services:
+  nginx-a:
+    image: nginx:latest
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html
+    environment:
+      VIRTUAL_HOST: 'admin.example.local,api.example.local,127.0.0.2'
+
+networks:
+  default:
+    external: true
+    name: sample-network
